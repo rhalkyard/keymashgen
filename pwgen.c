@@ -44,11 +44,12 @@ struct option pwgen_options[] = {
 	{ "ambiguous", no_argument, 0, 'B' },
 	{ "no-vowels", no_argument, 0, 'v' },
 	{ "bottom", no_argument, 0, 'b' },
+	{ "bottom-semicolons", no_argument, 0, 'S' },
 	{ 0, 0, 0, 0}
 };
 #endif
 
-const char *pw_options = "01AaBCcnN:sr:hH:vyb";
+const char *pw_options = "01AaBCcnN:sr:hH:vybS";
 
 static void usage(void)
 {
@@ -90,6 +91,8 @@ static void usage(void)
 	fputs("  -b or --bottom\n", stderr);
 	fputs("\tPrefer home-row characters\n",
 	      stderr);
+	fputs("  -S or --bottom-semicolons\n", stderr);
+	fputs("\tPrefer home-row characters, but with semicolons\n",stderr);
 	exit(1);
 }
 
@@ -171,6 +174,9 @@ int main(int argc, char **argv)
 		case 'b':
 			pwgen = pw_smash;
 			break;
+		case 'S':
+		        pwgen = pw_smash_semicolon;
+		        break;
 		case 'h':
 		case '?':
 			usage();
