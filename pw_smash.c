@@ -1,8 +1,7 @@
 /*
- * pw_rand.c --- generate completely random (and hard to remember)
- * 	passwords
+ * pw_rand.c --- generate keysmashes
  *
- * Copyright (C) 2001,2002 by Theodore Ts'o
+ * THIS MAKES BAD PASSWORDS AND YOU SHOULD FEEL BAD FOR USING IT
  * 
  * This file may be distributed under the terms of the GNU Public
  * License.
@@ -26,10 +25,12 @@ void pw_smash(char *buf, int size, int pw_flags, char *remove)
 	char		ch, *chars, *wchars;
 	int		i, len;
 
-	len = strlen(smash_toprow) * toprow_weight + strlen(smash_homerow) * homerow_weight + strlen(smash_bottomrow) * bottomrow_weight;
+	len = strlen(smash_toprow) * toprow_weight + \
+		strlen(smash_homerow) * homerow_weight + \
+		strlen(smash_bottomrow) * bottomrow_weight;
 	chars = malloc(len+1);
 	if (!chars) {
-		fprintf(stderr, "Couldn't malloc pw_rand buffer.\n");
+		fprintf(stderr, "Couldn't malloc pw_smash buffer.\n");
 		exit(1);
 	}
 	wchars = chars;
