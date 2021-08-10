@@ -43,11 +43,12 @@ struct option pwgen_options[] = {
 	{ "sha1", required_argument, 0, 'H' },
 	{ "ambiguous", no_argument, 0, 'B' },
 	{ "no-vowels", no_argument, 0, 'v' },
+	{ "bottom", no_argument, 0, 'b' },
 	{ 0, 0, 0, 0}
 };
 #endif
 
-const char *pw_options = "01AaBCcnN:sr:hH:vy";
+const char *pw_options = "01AaBCcnN:sr:hH:vyb";
 
 static void usage(void)
 {
@@ -85,6 +86,9 @@ static void usage(void)
 	      stderr);
 	fputs("  -v or --no-vowels\n", stderr);
 	fputs("\tDo not use any vowels so as to avoid accidental nasty words\n",
+	      stderr);
+	fputs("  -b or --bottom\n", stderr);
+	fputs("\tPrefer home-row characters\n",
 	      stderr);
 	exit(1);
 }
@@ -163,6 +167,9 @@ int main(int argc, char **argv)
 		case 'r':
 			remove = strdup(optarg);
 			pwgen = pw_rand;
+			break;
+		case 'b':
+			pwgen = pw_smash;
 			break;
 		case 'h':
 		case '?':

@@ -43,6 +43,9 @@ extern void pw_phonemes(char *buf, int size, int pw_flags, char *remove);
 /* pw_rand.c */
 extern void pw_rand(char *buf, int size, int pw_flags, char *remove);
 
+/* pw_smash.c */
+extern void pw_smash(char *buf, int size, int pw_flags, char *remove);
+
 /* randnum.c */
 extern int pw_random_number(int max_num);
 
