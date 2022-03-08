@@ -7,6 +7,8 @@
 The `-b` / `--bottom` option invokes the `pw_smash` generator, that tries to
 approximate keymashing, preferring characters on the home row.
 
+Alternately, use `-s` / `--bottom-semicolons` to include the *entire* home row, if that's your sort of thing.
+
 **ONCE AGAIN, THIS GENERATES BAD PASSWORDS AND IS PROBABLY BROKEN. DO NOT USE THIS**
 
 ```

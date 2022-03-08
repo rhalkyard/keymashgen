@@ -36,6 +36,7 @@ OBJS=	pwgen.o \
 	pw_phonemes.o \
 	pw_rand.o \
 	pw_smash.o \
+	pw_smash_semicolon.o \
 	randnum.o \
 	sha1.o \
 	sha1num.o
@@ -44,6 +45,7 @@ SRCS=	$(srcdir)/pwgen.c \
 	$(srcdir)/pw_phonemes.c \
 	$(srcdir)/pw_rand.c \
 	$(srcdir)/pw_smash.o \
+	$(srcdir)/pw_smash_semicolon.o \
 	$(srcdir)/randnum.c \
 	$(srcdir)/sha1.c \
 	$(srcdir)/sha1num.c
